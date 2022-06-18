@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "lista_tarea")
 public class ToDoModel {
-
     /**
      * atributo id, clave primaria
      */
@@ -18,8 +17,14 @@ public class ToDoModel {
     /**
      * atributo nombre de la lista
      */
-    @Column(length = 300, nullable = false, name = "tareas")
-    private String tareas;
+    @Column(length = 300, nullable = false, name = "task")
+    private String task;
+
+    /**
+     * Atributo completado
+     */
+    @Column(nullable = false, name = "complete")
+    private Boolean complete;
 
     /**
      * Relacion muchos a uno
@@ -47,21 +52,33 @@ public class ToDoModel {
     /**
      * Constructor con un parametro
      *
-     * @param tareas - recibe la tarea
+     * @param task - recibe la tarea
      */
-    public ToDoModel(String tareas) {
-        this.tareas = tareas;
+    public ToDoModel(String task) {
+        this.task = task;
     }
 
     /**
      * Constructor cons todos los parametros
      *
      * @param id     - recibe el id
-     * @param tareas - recibe la tarea
+     * @param task - recibe la tarea
      */
-    public ToDoModel(Long id, String tareas, ListaModel lista) {
+    public ToDoModel(Long id, String task, Boolean complete, ListaModel lista) {
         this.id = id;
-        this.tareas = tareas;
+        this.task = task;
+        this.complete = complete;
+        this.lista = lista;
+    }
+
+    /**
+     * Constructor cons todos los parametros
+     *
+     * @param task - recibe la tarea
+     * @param lista - recibe el id de la tarea
+     */
+    public ToDoModel(String task, ListaModel lista) {
+        this.task = task;
         this.lista = lista;
     }
 
@@ -88,8 +105,8 @@ public class ToDoModel {
      *
      * @return - retorna la tarea
      */
-    public String getTareas() {
-        return tareas;
+    public String getTask() {
+        return task;
     }
 
     /**
@@ -97,8 +114,24 @@ public class ToDoModel {
      *
      * @param tareas - recibe la tarea
      */
-    public void setTareas(String tareas) {
-        this.tareas = tareas;
+    public void setTask(String tareas) {
+        this.task = tareas;
+    }
+
+    /**
+     * Getter para saber si la tarea esta completa
+     * @return - devuelve un boleano
+     */
+    public Boolean getComplete() {
+        return complete;
+    }
+
+    /**
+     * Setter para modificar la tarea si esta completa o no
+     * @param complete - recibe un valor boleano
+     */
+    public void setComplete(Boolean complete) {
+        this.complete = complete;
     }
 
     /**
@@ -106,18 +139,16 @@ public class ToDoModel {
      *
      * @return
      */
-    public ListaModel getList() {
+    public ListaModel getLista() {
         return lista;
     }
 
     /**
      * Setter para el objeto de la lista
      *
-     * @param list - recibe el objeto
+     * @param lista - recibe el objeto
      */
-    public void setList(ListaModel list) {
-        this.lista = list;
+    public void setLista(ListaModel lista) {
+        this.lista = lista;
     }
-
-
 }

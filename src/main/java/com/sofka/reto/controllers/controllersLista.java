@@ -25,4 +25,20 @@ public class controllersLista {
     public ArrayList<DtoLista> obtenerDtoToDo() {
         return listaService.obtenerDtoToDo();
     }
+
+
+    /**
+     * Elimina una lista con id
+     * @param id - recibe el id de la lista
+
+     */
+    @DeleteMapping(path = "/{id}")
+    public String eliminarListaPorId(@PathVariable("id") Long id) {
+        boolean ok = this.listaService.eliminarLista(id);
+        if (ok) {
+            return "Se eliminó el usuario con id " + id;
+        } else {
+            return "No pudo eliminar el usuario con id" + id;
+        }
+    }
 }

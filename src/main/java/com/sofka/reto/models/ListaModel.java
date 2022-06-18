@@ -1,42 +1,108 @@
 package com.sofka.reto.models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
+import javax.persistence.*;
+import java.util.List;
+
+
+@Entity
+@Table(name = "lista")
 public class ListaModel {
 
-    //Generando constructores
+    /**
+     * atributo id, clave primaria
+     */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
+    private Long id;
 
-    @Column(length = 15, nullable = false, unique = true)
-    private String Nombre;
+    /**
+     * atributo nombre de la lista
+     */
+    @Column(name = "lista_name")
+    private String listName;
 
+    /**
+     * Hacer referencia a la tabla del many
+     */
+    @OnDelete(action= OnDeleteAction.CASCADE)
+    @OneToMany(mappedBy = "lista")
+    private List<ToDoModel> toDoLista;
 
-    public ListaModel(Long id, String nombre) {
-        Id = id;
-        Nombre = nombre;
+    /**
+     * Controlador vacio
+     */
+    public ListaModel() {
     }
 
+    /**
+     * Controlador solo con el parametro id
+     *
+     * @param id - recibe el id
+     */
+    public ListaModel(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * Controlador solo como parametro el nombre de la lista
+     *
+     * @param listName - recibe el nombre de la lista
+     */
+    public ListaModel(String listName) {
+        this.listName = listName;
+    }
+
+    /**
+     * constrolador con todod los parametros
+     *
+     * @param id       - recibe el id
+     * @param listName - recibe el nombre de la lista
+     */
+    public ListaModel(Long id, String listName) {
+        this.id = id;
+        this.listName = listName;
+    }
+
+
+    /**
+     * obtener el id
+     *
+     * @return
+     */
     public Long getId() {
-        return Id;
+        return id;
     }
 
+    /**
+     * modificar el id
+     *
+     * @param id - recibe el id a modificar
+     */
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getNombre() {
-        return Nombre;
+    /**
+     * obtener el nombre de la lista
+     *
+     * @return
+     */
+    public String getListName() {
+        return listName;
     }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    /**
+     * modificar el nombre
+     *
+     * @param listName - recibe el nombre a modificar
+     */
+    public void setListName(String listName) {
+        this.listName = listName;
     }
-
 
 
 

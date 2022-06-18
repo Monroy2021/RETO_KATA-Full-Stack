@@ -21,7 +21,7 @@ public class DtoLista {
      */
     @NotBlank
     @Size(max = 300)
-    private String nombre;
+    private String listName;
 
     /**
      * Controlador vacio
@@ -41,21 +41,21 @@ public class DtoLista {
     /**
      * Controlador solo como parametro el nombre de la lista
      *
-     * @param nombre - recibe el nombre de la lista
+     * @param listName - recibe el nombre de la lista
      */
-    public DtoLista(String nombre) {
-        this.nombre = nombre;
+    public DtoLista(String listName) {
+        this.listName = listName;
     }
 
     /**
      * constrolador con todod los parametros
      *
      * @param id     - recibe el id
-     * @param nombre - recibe el nombre de la lista
+     * @param listName - recibe el nombre de la lista
      */
-    public DtoLista(Long id, String nombre) {
+    public DtoLista(Long id, String listName) {
         this.id = id;
-        this.nombre = nombre;
+        this.listName = listName;
     }
 
     /**
@@ -81,16 +81,16 @@ public class DtoLista {
      *
      * @return
      */
-    public String getNombre() {
-        return nombre;
+    public String getlistName() {
+        return listName;
     }
 
     /**
      * modificar el nombre
      *
-     * @param nombre - recibe el nombre a modificar
+     * @param listName - recibe el nombre a modificar
      */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setlistName(String listName) {
+        this.listName = listName;
     }
 }

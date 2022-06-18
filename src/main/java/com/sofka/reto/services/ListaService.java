@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class ListaService {
     /**
@@ -32,6 +33,15 @@ public class ListaService {
         ListaModel listEntity = confiMapper.map(dtoLista, ListaModel.class);
         listEntity = LISTA_REPOSITORY.save(listEntity);
         return confiMapper.map(listEntity, DtoLista.class);
+    }
+
+    public boolean eliminarLista(Long id) {
+        try {
+            LISTA_REPOSITORY.deleteById(id);
+            return true;
+        } catch (Exception err) {
+            return false;
+        }
     }
 
 
