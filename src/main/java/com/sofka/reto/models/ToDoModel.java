@@ -42,8 +42,7 @@ public class ToDoModel {
 
     /**
      * Constructor con un parametro
-     *
-     * @param id - recibe el id
+
      */
     public ToDoModel(Long id) {
         this.id = id;
@@ -51,8 +50,7 @@ public class ToDoModel {
 
     /**
      * Constructor con un parametro
-     *
-     * @param task - recibe la tarea
+
      */
     public ToDoModel(String task) {
         this.task = task;
@@ -60,9 +58,7 @@ public class ToDoModel {
 
     /**
      * Constructor cons todos los parametros
-     *
-     * @param id     - recibe el id
-     * @param task - recibe la tarea
+
      */
     public ToDoModel(Long id, String task, Boolean complete, ListaModel lista) {
         this.id = id;
@@ -73,9 +69,7 @@ public class ToDoModel {
 
     /**
      * Constructor cons todos los parametros
-     *
-     * @param task - recibe la tarea
-     * @param lista - recibe el id de la tarea
+
      */
     public ToDoModel(String task, ListaModel lista) {
         this.task = task;
@@ -84,8 +78,7 @@ public class ToDoModel {
 
     /**
      * Getter para el id
-     *
-     * @return - retorna el id
+
      */
     public Long getId() {
         return id;
@@ -93,8 +86,7 @@ public class ToDoModel {
 
     /**
      * Setter para el id
-     *
-     * @param id - recibe el id
+
      */
     public void setId(Long id) {
         this.id = id;
@@ -102,8 +94,7 @@ public class ToDoModel {
 
     /**
      * Getter para las tareas
-     *
-     * @return - retorna la tarea
+
      */
     public String getTask() {
         return task;
@@ -111,8 +102,7 @@ public class ToDoModel {
 
     /**
      * Setter para las tareas
-     *
-     * @param tareas - recibe la tarea
+
      */
     public void setTask(String tareas) {
         this.task = tareas;
@@ -120,7 +110,7 @@ public class ToDoModel {
 
     /**
      * Getter para saber si la tarea esta completa
-     * @return - devuelve un boleano
+
      */
     public Boolean getComplete() {
         return complete;
@@ -128,7 +118,7 @@ public class ToDoModel {
 
     /**
      * Setter para modificar la tarea si esta completa o no
-     * @param complete - recibe un valor boleano
+
      */
     public void setComplete(Boolean complete) {
         this.complete = complete;
@@ -136,8 +126,7 @@ public class ToDoModel {
 
     /**
      * Getter para el objeto de la lista
-     *
-     * @return
+
      */
     public ListaModel getLista() {
         return lista;
@@ -145,8 +134,7 @@ public class ToDoModel {
 
     /**
      * Setter para el objeto de la lista
-     *
-     * @param lista - recibe el objeto
+
      */
     public void setLista(ListaModel lista) {
         this.lista = lista;

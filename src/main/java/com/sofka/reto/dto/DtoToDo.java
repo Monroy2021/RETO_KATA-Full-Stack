@@ -36,8 +36,7 @@ public class DtoToDo {
 
     /**
      * Constructor con un parametro
-     *
-     * @param id - recibe el id
+
      */
     public DtoToDo(Long id) {
         this.id = id;
@@ -45,8 +44,7 @@ public class DtoToDo {
 
     /**
      * Constructor con un parametro
-     *
-     * @param tareas - recibe la tarea
+
      */
     public DtoToDo(String tareas) {
         this.task = tareas;
@@ -54,9 +52,6 @@ public class DtoToDo {
 
     /**
      * Constructor cons todos los parametros
-     *
-     * @param id     - recibe el id
-     * @param task - recibe la tarea
      */
     public DtoToDo(Long id, String task, Boolean complete, ListaModel lista) {
         this.id = id;
@@ -67,9 +62,6 @@ public class DtoToDo {
 
     /**
      * Constructor cons todos los parametros
-     *
-     * @param lista   - recibe el id de la lista
-     * @param task - recibe la tarea
      */
     public DtoToDo(String task, ListaModel lista) {
         this.task = task;
@@ -89,8 +81,7 @@ public class DtoToDo {
 
     /**
      * Getter para el id
-     *
-     * @return - retorna el id
+
      */
     public void setId(Long id) {
         this.id = id;
@@ -98,8 +89,7 @@ public class DtoToDo {
 
     /**
      * Getter para las tareas
-     *
-     * @return - retorna la tarea
+
      */
     public String getTask() {
         return task;
@@ -107,8 +97,7 @@ public class DtoToDo {
 
     /**
      * Setter para las tareas
-     *
-     * @param tareas - recibe la tarea
+
      */
     public void setTask(String tareas) {
         this.task = tareas;
@@ -116,7 +105,6 @@ public class DtoToDo {
 
     /**
      * Getter para saber si la tarea esta completa
-     * @return - devuelve un boleano
      */
     public Boolean getComplete() {
         return complete;
@@ -124,7 +112,7 @@ public class DtoToDo {
 
     /**
      * Setter para modificar la tarea si esta completa o no
-     * @param complete - recibe un valor boleano
+
      */
     public void setComplete(Boolean complete) {
         this.complete = complete;
@@ -132,8 +120,7 @@ public class DtoToDo {
 
     /**
      * Getter para el objeto de la lista
-     *
-     * @return
+
      */
     public ListaModel getLista() {
         return lista;
@@ -141,8 +128,6 @@ public class DtoToDo {
 
     /**
      * Setter para el objeto de la lista
-     *
-     * @param lista - recibe el objeto
      */
     public void setLista(ListaModel lista) {
         this.lista = lista;
